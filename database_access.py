@@ -25,6 +25,7 @@ class Database:
         connection = sqlite3.connect("database.db")
         return connection, connection.cursor()
 
+# KEKSE
 
     @staticmethod
     def _commit_n_close(connection: sqlite3.Connection) -> None:
