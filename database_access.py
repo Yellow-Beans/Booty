@@ -97,7 +97,7 @@ class Database:
         """
         connection, cursor = self._get_con()
 
-        # Create a new entry if the user is not stored in the database. else: continu
+        # Create a new entry if the user is not stored in the database. else: continue
         cursor.execute(
             """
             INSERT OR IGNORE INTO activity 
