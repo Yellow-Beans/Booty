@@ -56,7 +56,7 @@ class Database:
         self._commit_n_close(connection)
 
 
-    def make_or_update_entry(self, serverid: int, userid: int, timestamp: int, white=False):
+    def make_or_update_entry(self, serverid: int, userid: int, timestamp: int, white=False) -> None:
         """
         updates the stored timestamp for a stored user if the user exists.
         creates a new entry if the user does not exist.
@@ -88,7 +88,7 @@ class Database:
         self._commit_n_close(connection)
 
 
-    def make_needed_entry(self, serverid: int, userid: int, timestamp: int):
+    def make_needed_entry(self, serverid: int, userid: int, timestamp: int) -> None:
         """
         Creates a new line if the user is not stored. Does nothing if the user exists in the DB.
         :arg serverid: int
@@ -242,7 +242,7 @@ class Database:
             connection.close()
 
 
-    def make_needed_entries(self, s_and_u_ids: list[tuple[int, int]]):
+    def make_needed_entries(self, s_and_u_ids: list[tuple[int, int]]) -> None:
         """
         Creates a new line if the user is not stored. Does nothing if the user exists in the DB.
         :param s_and_u_ids: a list with tuples, with a guild and user ID in each tuple.
