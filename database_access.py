@@ -242,7 +242,7 @@ class Database:
             connection.close()
 
 
-    def make_needed_entries(self, s_and_u_ids: list[tuple[int, int]]) -> None:
+    def make_needed_entries(self, s_and_u_ids: list[tuple[int, int, int, bool]]) -> None:
         """
         Creates a new line if the user is not stored. Does nothing if the user exists in the DB.
         :param s_and_u_ids: a list with tuples, with a guild and user ID in each tuple.
